@@ -33,7 +33,6 @@
 			$('img').click(function()
 			{
 				var id = $(this).attr('id');
-				// alert(id); <-- testing whether or not the id was being captured by my syntax
 				$.get('http://pokeapi.co/api/v1/pokemon/'+id, function(pokemon)
 				{
 					var pokedex = '';
