@@ -17,15 +17,19 @@
 		}
 
 		#dex{
+			padding-left: 80px;
 			display: inline-block;
 			width: 200px;
 			border: 1px solid black;
 			vertical-align: top;
-			padding-left: 50px;
 			position: fixed;
 		}
 
-		h1, h2, h4{
+		h1 {
+			display: inline;
+		}
+
+		h1, h2, h4, li{
 			font-family: 'Denk One', sans-serif;
 		}
 	</style>
@@ -51,16 +55,12 @@
 					pokedex += '<h4>Types</h4>';
 					pokedex += '<ul>';
 					for(var i = 0; i < pokemon.types.length; i++){
-						pokedex += '<li>'+pokemon.types[i].name;+'</li></ul>';
+						pokedex += '<li>'+pokemon.types[i].name;+'</li>';
 					}
-					pokedex += '<h4>Attack:</h4>';
-					pokedex += pokemon.attack;
-					pokedex += '<h4>Defense:</h4>';
-					pokedex += pokemon.defense;
-					pokedex += '<h4>Speed:</h4>';
-					pokedex += pokemon.speed;
-					pokedex += '<h4>Hit Points:</h4>';
-					pokedex += pokemon.hp;
+					pokedex += '</ul><h4>Attack: ' + pokemon.attack + '</h4>';
+					pokedex += '<h4>Defense: ' + pokemon.defense + '</h4>';
+					pokedex += '<h4>Speed: ' + pokemon.speed + '</h4>';
+					pokedex += '<h4>Hit Points: ' + pokemon.hp + '</h4>';
 					$('#dex').html(pokedex);
 					},
 				'json');
